@@ -1,52 +1,62 @@
 var numberOfTargets = 3;
-var targetHit = [];
+var widthOfShip = 3;
+var widthOfSea = 7;
 
+// Boolean array for tracking targets which were already hit
+var targetHit = [];
 for (a = 1; a <= numberOfTargets; a++){
 	targetHit[a] = false;
 }
 
-var xGuess;
+var xGuess; // x value of guess
 var hits = 0;
 var guesses = 0;
 
 var isSunk = false;
 
-var randomLoc = Math.floor(Math.random() * 5);
+// randomizes first x coordinate between 0 and 4
+var xRandomLoc = Math.floor(Math.random() * (widthOfSea - widthOfShip + 1));
 
-var targetLocation = [];
-targetLocation[1] = randomLoc;
-// var initializeArray1 = "The value of targetLocation 1 is " + targetLocation[1];
+// initializes the x variable array stores the first x value for the array. I skipped [0]
+var xTargetLocation = []; 
+xTargetLocation[1] = xRandomLoc; 
+
+// DEBUG
+// var initializeArray1 = "The value of xTargetLocation 1 is " + xTargetLocation[1];
 // alert(initializeArray1);
 
-for (x = 2; x <= numberOfTargets; x++){
- targetLocation[x] = (targetLocation[x - 1] + 1);
- // var initializeArray2 = "The value of targetLocation " + x + " is " + targetLocation[x];
+// x coordinate array initialization loop
+for (b = 2; b <= numberOfTargets; b++){
+ xTargetLocation[b] = (xTargetLocation[b - 1] + 1); 
+ 
+ // DEBUG
+ // var initializeArray2 = "The value of xTargetLocation " + x + " is " + xTargetLocation[x];
  // alert(initializeArray2);
 }
 
 while (!isSunk) {
-	xGuess = prompt("Ready, aim, fire! (enter a number 0-6):");
+	xGuess = prompt("Ready, aim, fire! (enter a number 0-" + (widthOfSea - 1) + "):");
 	
-	if (xGuess < 0 || xGuess > 6) {
+	if (xGuess < 0 || xGuess > widthOfSea) {
 		alert("Please enter a valid cell number!");
 	} else {
 		guesses++;
 		var missedCount = 0;
 		for (i = 1; i <= numberOfTargets; i++ ){
-			if (xGuess == targetLocation[i]){
+			if (xGuess == xTargetLocation[i]){
 				if (targetHit[i]){
-					var alreadyHitAlert = "ALREADY HIT"; //+ i + " location with " + xGuess;  
+					var alreadyHitAlert = "ALREADY HIT"; // DEBUG + i + " location with " + xGuess; 
 					alert(alreadyHitAlert);
 					break;
 				}else{
 										
 					hits++;
-					var hitAlert = "HIT"; // + i + " location with " + xGuess; 
+					var hitAlert = "HIT"; // DEBUG + i + " location with " + xGuess; 
 					alert(hitAlert);
-					targetHit[i] = true;
+					targetHit[i] = true; // marks this target as hit in boolean array
 					
 					if (hits == numberOfTargets) {
-						isSunk = true;
+						isSunk = true; // marks battleship as hit
 						alert("You sank my battleship!");
 						break;
 					}
@@ -56,7 +66,7 @@ while (!isSunk) {
 			}else{
 				missedCount++;
 				if(missedCount == numberOfTargets){
-					var missedAlert = "MISS "; // + missedCount + " locations with " + xGuess;
+					var missedAlert = "MISS "; // DEBUG + missedCount + " locations with " + xGuess; 
 					alert(missedAlert);
 				}
 			}
