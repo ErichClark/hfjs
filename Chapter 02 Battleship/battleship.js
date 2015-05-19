@@ -75,6 +75,5 @@ while (!isSunk) {
 }
 
 var scorePercentage = Math.floor((numberOfTargets/guesses) * 100);
-var stats = "You took " + guesses + " guesses to sink the battleship, " +
-"which means your shooting accuracy was " + scorePercentage +"%";
+var stats = "You took " + guesses + " guesses to sink the battleship, " + "which means your shooting accuracy was " + scorePercentage +"%";
 alert(stats);
