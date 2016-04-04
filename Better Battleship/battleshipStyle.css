@@ -1,0 +1,77 @@
+@font-face {
+	font-family: battleFont;
+	src: url(ocraextended.ttf);
+}
+body {
+	background-color: black;
+	font-family : battleFont;
+	color: #4bab08;
+}
+div#board {
+	background-color: black;
+	font-family : battleFont;
+	color: #8aae34;
+	position: relative;
+	width: 1024px;
+	height: 863px;
+	margin: auto;
+	background: url("images/board.jpg") no-repeat;
+}
+div#messageArea {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+form#firingSolution {
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+}
+table {
+	position: absolute;
+	left: 173px;
+	top: 98px;
+	border-spacing: 2px;
+}
+td {
+	width: 94px;
+	height: 94px;
+}
+form {
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+	padding: 9px;
+	background-color: black;
+	border: 3px;
+	border-style: solid;
+	border-color: #8aae34;
+}
+form input {
+	background-color: #172c05;
+	border-color: rgb(83, 175, 19);
+	font-size: 1em;
+	font-family : battleFont;
+	color: #8aae34;
+	padding: 5 px;
+}
+input::-webkit-input-placeholder{
+    color: #8aae34;
+}
+input:-moz-placeholder {
+    color: #8aae34;
+}
+input:focus {
+    outline: none !important;
+}
+form.uppercase {
+    text-transform: uppercase;
+}
+.hit {
+	background: url("images/hit.png") no-repeat center center; 
+	/*content: "TEST"; */
+}
+.miss {
+	background: url("images/miss.png") no-repeat center center;
+	/*content: "MISS"; */
+}
