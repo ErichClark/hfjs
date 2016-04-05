@@ -21,6 +21,7 @@ div#messageArea {
 	position: absolute;
 	top: 0px;
 	left: 0px;
+	font-size: 4em;
 }
 form#firingSolution {
 	position: absolute;
@@ -31,11 +32,12 @@ table {
 	position: absolute;
 	left: 173px;
 	top: 98px;
-	border-spacing: 2px;
+	border-spacing: 0px;
 }
 td {
 	width: 94px;
-	height: 94px;
+	height: 95px;
+	border-spacing: 0px;
 }
 form {
 	position: absolute;
