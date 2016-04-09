@@ -21,7 +21,7 @@ div#messageArea {
 	position: absolute;
 	top: 0px;
 	left: 0px;
-	font-size: 4em;
+	font-size: 3em;
 }
 form#firingSolution {
 	position: absolute;
@@ -70,7 +70,7 @@ form.uppercase {
     text-transform: uppercase;
 }
 .hit {
-	background: url("images/hit.png") no-repeat center center; 
+	background: url("images/flame.png") no-repeat center center; 
 	/*content: "TEST"; */
 }
 .miss {
